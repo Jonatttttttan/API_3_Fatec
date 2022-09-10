@@ -23,23 +23,23 @@ public class Estacao {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long idEstacaibr;
 	
-	@NotEmpty
+	@NotEmpty(message="O nome da estaçao nao deve ser nulo")
 	@Size(max=60, message="Número máximo de caracteres é de 60.")
 	private String nomeEstacao;
 	
-	@NotNull
+	@NotNull(message="A latitude nao deve ser nula")
 	@DecimalMin(value="0.01", message=" A latitude da Estaçao nao pode ser menor que 0,01")
 	private BigDecimal latitudeEstacao;
 	
-	@NotNull
+	@NotNull(message="A longitude nao deve ser nula")
 	@DecimalMin(value="0.01", message=" A longitude da Estaçao nao pode ser menor que 0,01")
 	private BigDecimal longitudeEstacao;
 	
-	@NotNull
+	@NotNull(message="A altitude nao deve ser nula")
 	@DecimalMin(value="0.01", message=" A altitude da Estaçao nao pode ser menor que 0,01")
 	private BigDecimal altitudeEstacao;
 	
-	@NotNull
+	@NotNull(message="A data de fundaçao nao deve ser nula")
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataFundacao;
