@@ -1,0 +1,12 @@
+div#painelEstacoes{
+	padding:30px;
+	padding-top: 50px;
+}
+
+body{
+	padding:10px;
+}
+
+#listaEstacoes{
+	text-align: center;
+}

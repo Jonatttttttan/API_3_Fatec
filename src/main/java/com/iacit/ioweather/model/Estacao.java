@@ -27,13 +27,11 @@ public class Estacao {
 	@Size(max=60, message="Número máximo de caracteres é de 60.")
 	private String nomeEstacao;
 	
-	@NotNull(message="A latitude nao deve ser nula")
-	@DecimalMin(value="0.01", message=" A latitude da Estaçao nao pode ser menor que 0,01")
-	private BigDecimal latitudeEstacao;
+	@NotEmpty(message="A latitude da estaçao nao deve ser nulo")
+	private String latitudeEstacao;
 	
-	@NotNull(message="A longitude nao deve ser nula")
-	@DecimalMin(value="0.01", message=" A longitude da Estaçao nao pode ser menor que 0,01")
-	private BigDecimal longitudeEstacao;
+	@NotEmpty(message="A longitude da estaçao nao deve ser nulo")
+	private String longitudeEstacao;
 	
 	@NotNull(message="A altitude nao deve ser nula")
 	@DecimalMin(value="0.01", message=" A altitude da Estaçao nao pode ser menor que 0,01")
@@ -60,16 +58,16 @@ public class Estacao {
 	public void setNomeEstacao(String nomeEstacao) {
 		this.nomeEstacao = nomeEstacao;
 	}
-	public BigDecimal getLatitudeEstacao() {
+	public String getLatitudeEstacao() {
 		return latitudeEstacao;
 	}
-	public void setLatitudeEstacao(BigDecimal latitudeEstacao) {
+	public void setLatitudeEstacao(String latitudeEstacao) {
 		this.latitudeEstacao = latitudeEstacao;
 	}
-	public BigDecimal getLongitudeEstacao() {
+	public String getLongitudeEstacao() {
 		return longitudeEstacao;
 	}
-	public void setLongitudeEstacao(BigDecimal longitudeEstacao) {
+	public void setLongitudeEstacao(String longitudeEstacao) {
 		this.longitudeEstacao = longitudeEstacao;
 	}
 	public BigDecimal getAltitudeEstacao() {

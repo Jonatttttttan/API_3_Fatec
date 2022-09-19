@@ -1,0 +1,35 @@
+#corpo-cadastroEstacao{
+	background-color:rgba(30,144,255,.5);
+}
+
+#form-cadEstacao{
+	padding-top: 100px;
+	
+}
+
+#novaEstacao{
+	text-align: center;
+	padding: 10px;
+	font-size:18pt;
+}
+
+#titulo{
+	size:100pt;
+}
+
+header#cabecalho{
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+a#link{
+	padding-top: 10px;
+	box-sizing: border-box;
+	border:solid .5px;
+	border-radius: 20px;
+	border-color: yellow;
+	text-align: center;
+	background-color: grey;
+	color:white;
+	margin-bottom:10px;
+}

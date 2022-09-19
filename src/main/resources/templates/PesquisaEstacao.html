@@ -6,21 +6,28 @@
 <title>Pesquisa de Estaçoes</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/css/styleEstacoes.css"/>
 </hread>
      <body>
-     <a href="\estacoes">Estacoes<a>
+        <header id="cabecalho">
+           <div class="clearfix">
+                <a id="link"class="btn btn-link aw-link-panel" href="/novaEstacao"> Nova estacao </a>
+           </div>
+
+
+        </header>
      
      
-     <div class="panel panel-default"> <!-- Painel  -->
+     
+     
+     <div id="painelEstacoes"class="panel panel-default"> <!-- Painel  -->
+        <h3 id="listaEstacoes">Lista de Estaçoes</h3>
             <div class="panel-heading">
             
                <div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
                     <span th:text="${mensagem}">Título salvo com sucesso!!!</span>
                </div>
-                <div class="clearfix">
-                    <h1 class="panel-title aw-titulo-panel" > Pesquisa Estaçoes </h1>
-                    <a class="btn btn-link aw-link-panel" href="/novaEstacao"> Nova estacao </a>
-                </div>
+                
             </div>
             
             

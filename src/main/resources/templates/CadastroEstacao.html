@@ -10,9 +10,16 @@
 
 
 </hread>
-<body class="corpo">
+<body class="corpo" id="corpo-cadastroEstacao">
 
-<form class="form-horizontal" method="post" action="/novaEstacao" th:object="${estacao}">
+<header id="cabecalho">
+
+ <a id="link"class="btn btn-link aw-link-panel" href="/estacoes">Voltar para a pesquisa </a>
+
+
+</header>
+
+<form id="form-cadEstacao"class="form-horizontal" method="post" action="/novaEstacao" th:object="${estacao}">
 
    <div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
        <span th:text="${mensagem}"></span>
@@ -20,7 +27,7 @@
    
    
   <!--<div th:replace="MensagemGeral"></div> 
-  <div th:replace="MensagemErro"></div>    <!-- Mensagem de exclusao --> -->
+  <div th:replace="MensagemErro"></div>    <!-- Mensagem de exclusao --> 
   
      <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
        <div th:each="detailedError : ${#fields.detailedErrors()}">
@@ -31,8 +38,10 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="clearfix">
-                <h1 class="panel-title aw-titulo-panel" >Nova Estaçao</h1>
-                <a class="btn btn-link aw-link-panel" href="/titulos">Voltar para a pesquisa </a>
+               <div id="titulo">
+                  <h1 id="novaEstacao"class="panel-title aw-titulo-panel" ><strong>Nova Estaçao</strong></h1>
+                 
+               </div>
             </div>
         </div>
         
@@ -41,35 +50,36 @@
             <div class="form-group"  th:classappend="${#fields.hasErrors('nomeEstacao')} ? 'has-error'" >
                 <label for="descriçao" class="col-sm-2 control-label">Nome da Estaçao</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="NomeEstacao" th:field="*{nomeEstacao}"/>
+                    <input type="text" class="form-control" id="NomeEstacao" th:field="*{nomeEstacao}" placeholder="Nome da Estaçao"/>
                 </div>
             </div>
             
             <div class="form-group" th:classappend="${#fields.hasErrors('latitudeEstacao')} ? 'has-error'">
                 <label for="dataVencimento" class="col-sm-2 control-label"> Latitude da estaçao</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" id="Latitude" th:field="*{latitudeEstacao}"/>
+                    <input type="text" class="form-control" id="Latitude" th:field="*{latitudeEstacao}" placeholder="Ex: 22º 55´S "/>
                 </div>
             </div>
             
             <div class="form-group" th:classappend="${#fields.hasErrors('longitudeEstacao')} ? 'has-error'">
                 <label for="valor" class="col-sm-2 control-label"> Longitude da estaçao</label>
                 <div class="col-sm-2">
-                     <input type="text" class="form-control" id="Longitude" th:field="*{longitudeEstacao}"/>
+                     <input type="text" class="form-control" id="Longitude" th:field="*{longitudeEstacao}" placeholder="Ex: 22º 55´S"/>
                 </div>
             </div>
             
            <div class="form-group" th:classappend="${#fields.hasErrors('altitudeEstacao')} ? 'has-error'">
                 <label for="valor" class="col-sm-2 control-label"> Altitude da estaçao</label>
                 <div class="col-sm-2">
-                     <input type="text" class="form-control" id="Altitude" th:field="*{altitudeEstacao}"/>
+                     <input type="text" class="form-control" id="Altitude" th:field="*{altitudeEstacao}" placeholder="Altitude"/>
                 </div>
             </div>
             
             <div class="form-group" th:classappend="${#fields.hasErrors('dataFundacao')} ? 'has-error'">
                 <label for="valor" class="col-sm-2 control-label"> Data da Fundaçao</label>
                 <div class="col-sm-2">
-                     <input type="text" class="form-control" id="DataFundacao" th:field="*{dataFundacao}"/>
+                     <input type="text" class="form-control" id="DataFundacao" th:field="*{dataFundacao}"
+                      data-provide="datepicker" data-format="dd/mm/yyyy" data-date-language="pt-BR" data-date-autoclose="true" data-date-today-highlight="true" data-date-orientation="bottom"/>
                 </div>
             </div>
             
@@ -93,5 +103,9 @@
     
  <script src="/js/jquery-3.6.0.min.js"></script>   
  <script src="/js/bootstrap.min.js"></script>
+ <script src="/js/bootstrap-datepicker.min.js"></script>
+ <script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrapdatepicker.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrapdatepicker/1.6.4/locales/bootstrap-datepicker.pt-BR.min.js"></script>
 </body>
 </html>
